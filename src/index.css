@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap"); 
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+   
+
+    /* Update font family with specific fallback */
+    font-family: "IBM Plex Mono", monospace;
+    
+  }
+}
