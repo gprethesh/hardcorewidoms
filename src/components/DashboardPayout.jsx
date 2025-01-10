@@ -38,22 +38,24 @@ export default function DashboardPayout() {
   const progressPercentage = (currentEarnings / minimumPayout) * 100;
 
   return (
-    <div className="flex flex-col h-screen bg-white/40 backdrop-blur-md">
+    <div className="flex flex-col min-h-screen bg-white/40 backdrop-blur-md">
       <DashHeader />
 
       <div className="flex-1 p-4 lg:p-8 overflow-y-auto">
-        <div className="flex items-center mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-8">
           <div>
-            <h1 className="text-xl font-semibold text-black">
+            <h1 className="text-lg sm:text-xl font-semibold text-black">
               Payout Dashboard
             </h1>
-            <p className="text-sm text-muted-foreground">{currentDate}</p>
+            <p className="text-xs sm:text-sm text-muted-foreground">
+              {currentDate}
+            </p>
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
           {/* Current Earnings Section */}
-          <Card className="p-6">
+          <Card className="p-4 sm:p-6">
             <h2 className="text-lg font-semibold text-[#670404] mb-4">
               Current Earnings
             </h2>
@@ -103,17 +105,17 @@ export default function DashboardPayout() {
           </Card>
 
           {/* Payout History Section */}
-          <Card className="p-6">
+          <Card className="p-4 sm:p-6">
             <h2 className="text-lg font-semibold text-[#670404] mb-4">
               Recent Payouts
             </h2>
-            <div className="overflow-x-auto">
+            <div className="-mx-4 sm:mx-0 overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Amount</TableHead>
-                    <TableHead>Status</TableHead>
+                    <TableHead className="whitespace-nowrap">Date</TableHead>
+                    <TableHead className="whitespace-nowrap">Amount</TableHead>
+                    <TableHead className="whitespace-nowrap">Status</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

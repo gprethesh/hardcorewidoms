@@ -63,12 +63,14 @@ export default function Login() {
             </div>
 
             {/* Login Button */}
-            <button
-              type="submit"
-              className="w-full py-2 px-4 border-2 border-[#121212] bg-white hover:bg-gradient-to-r from-[#121212] to-[#670404] text-[#121212] hover:text-white transition-colors duration-300 rounded-md font-medium"
-            >
-              Sign In
-            </button>
+            <Link to="/dashboard">
+              <button
+                type="submit"
+                className="w-full py-2 px-4 border-2 border-[#121212] bg-white hover:bg-gradient-to-r from-[#121212] to-[#670404] text-[#121212] hover:text-white transition-colors duration-300 rounded-md font-medium"
+              >
+                Sign In
+              </button>
+            </Link>
           </form>
 
           <div className="mt-6 text-center text-sm">
