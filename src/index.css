@@ -9,7 +9,10 @@
 
 @layer base {
   :root {
-   
+    :root, .light {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+    }
 
     /* Update font family with specific fallback */
     font-family: "IBM Plex Mono", monospace;

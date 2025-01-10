@@ -130,7 +130,7 @@ function Navbar() {
             <li className="w-full md:w-auto md:ml-6">
               <Link to="/login" className="block w-full md:w-auto">
                 <Button
-                  variant="secondary"
+                  variant="default"
                   size="sm"
                   className="text-xs sm:text-sm border-2 border-[#121212] bg-white hover:bg-gradient-to-r from-[#121212] to-[#670404] text-[#121212] hover:text-white transition-colors duration-300"
                 >

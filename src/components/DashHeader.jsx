@@ -9,6 +9,7 @@ import {
   Settings,
   Eye,
   LogOut,
+  DollarSign,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -79,6 +80,19 @@ export default function DashHeader() {
                 }`}
               >
                 <Settings size={20} />
+              </Button>
+            </Link>
+            <Link to="/dashboard-payout">
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`text-gray-500 hover:bg-[#670404] hover:text-white ${
+                  isActivePath("/dashboard-payout")
+                    ? "bg-[#670404] text-white"
+                    : ""
+                }`}
+              >
+                <DollarSign size={20} />
               </Button>
             </Link>
           </nav>
@@ -156,6 +170,17 @@ export default function DashHeader() {
             }`}
           >
             <Settings size={20} />
+          </Button>
+        </Link>
+        <Link to="/dashboard-payout">
+          <Button
+            variant="ghost"
+            size="icon"
+            className={`text-gray-500 hover:bg-[#670404] hover:text-white ${
+              isActivePath("/dashboard-payout") ? "bg-[#670404] text-white" : ""
+            }`}
+          >
+            <DollarSign size={20} />
           </Button>
         </Link>
       </nav>

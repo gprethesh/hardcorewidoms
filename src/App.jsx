@@ -18,6 +18,7 @@ import Content from "./components/Content";
 import DashboardAffiliate from "./components/DashboardAffiliate";
 import DashboardProfile from "./components/DashboardProfile";
 import DashboardPlan from "./components/DashboardPlan";
+import DashboardPayout from "./components/DashboardPayout";
 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -37,6 +38,7 @@ function App() {
               />
               <Route path="/dashboard-profile" element={<DashboardProfile />} />
               <Route path="/dashboard-plan" element={<DashboardPlan />} />
+              <Route path="/dashboard-payout" element={<DashboardPayout />} />
               <Route
                 element={
                   <>

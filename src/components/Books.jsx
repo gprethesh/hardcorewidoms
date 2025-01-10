@@ -52,7 +52,7 @@ const Books = () => {
     <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-16">
       <div className="text-center mb-12">
         <h2 className="main-heading-2">5000 Years Old Secret Wisdoms</h2>
-        <p className="mt-4 text-gray-600 italic">
+        <p className="mt-4 text-gray-500 italic">
           "Top Notch 51+ Ancient Lessons on Womans Nature."
         </p>
       </div>
@@ -106,7 +106,7 @@ const Books = () => {
 
                   <div className="flex items-center gap-4">
                     <Button
-                      variant="secondary"
+                      variant="default"
                       size="sm"
                       className="text-xs sm:text-sm border-2 border-[#121212] bg-white hover:bg-gradient-to-r from-[#121212] to-[#670404] text-[#121212] hover:text-white transition-colors duration-300"
                     >

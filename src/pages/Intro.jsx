@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import Para from "../components/Para";
 import Pillars from "../components/Pillars";
 import Books from "../components/Books";
-import Books2 from "../components/books2";
+
 import { Separator } from "@/components/ui/separator";
 
 const Intro = () => {

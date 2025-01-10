@@ -127,7 +127,7 @@ export default function Dashboard() {
                 className="font-mono text-sm bg-muted/50"
               />
               <Button
-                variant="outline"
+                variant="ghost"
                 size="icon"
                 onClick={copyToClipboard}
                 className="shrink-0"
