@@ -151,7 +151,7 @@ const Content = () => {
         {sections.map((section) => (
           <div key={section.id}>
             <Button
-              variant="default"
+              variant="ghost"
               className={`w-full justify-start ${
                 activeModule === section.id ? "bg-[#670404] text-white" : ""
               }`}
@@ -167,7 +167,7 @@ const Content = () => {
                 {section.subModules.map((subModule) => (
                   <Button
                     key={subModule.id}
-                    variant="default"
+                    variant="ghost"
                     size="sm"
                     className={`w-full justify-start ${
                       activeSubModule === subModule.id
@@ -277,7 +277,7 @@ const Content = () => {
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t md:hidden z-50">
         <div className="flex items-center justify-between px-4 py-2">
           <Button
-            variant="default"
+            variant="ghost"
             size="sm"
             onClick={() => handleNavigation(-1)}
             disabled={getCurrentIndices().moduleIndex === 0}
@@ -287,7 +287,7 @@ const Content = () => {
 
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="default" size="sm">
+              <Button variant="ghost" size="sm">
                 {getCurrentIndices().moduleIndex + 1}/{sections.length}
               </Button>
             </SheetTrigger>
@@ -295,7 +295,7 @@ const Content = () => {
           </Sheet>
 
           <Button
-            variant="default"
+            variant="ghost"
             size="sm"
             onClick={() => handleNavigation(1)}
             disabled={getCurrentIndices().moduleIndex === sections.length - 1}
