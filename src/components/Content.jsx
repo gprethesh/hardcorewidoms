@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { post1 } from "@/post/post1";
 import { post2 } from "@/post/post2";
 import { post3 } from "@/post/post3";
@@ -13,26 +13,76 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Content = () => {
+  const { moduleSlug, subModuleSlug } = useParams();
+  const navigate = useNavigate();
   const sections = [post1, post2, post3, { ...post4Preview, isLocked: true }];
-  const [activeModule, setActiveModule] = useState(sections[0].id);
-  const [activeSubModule, setActiveSubModule] = useState(
-    sections[0].subModules?.[0]?.id
-  );
+  const [activeModule, setActiveModule] = useState(() => {
+    const targetModule = sections.find(
+      (section) => section.slug === moduleSlug
+    );
+    return targetModule ? targetModule.id : sections[0].id;
+  });
+  const [activeSubModule, setActiveSubModule] = useState(() => {
+    const targetModule = sections.find(
+      (section) => section.slug === moduleSlug
+    );
+    if (targetModule?.subModules) {
+      const targetSubModule = targetModule.subModules.find(
+        (sub) => sub.slug === subModuleSlug
+      );
+      return targetSubModule
+        ? targetSubModule.id
+        : targetModule.subModules[0]?.id;
+    }
+    return null;
+  });
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (moduleSlug) {
+      const targetModule = sections.find(
+        (section) => section.slug === moduleSlug
+      );
+      if (targetModule) {
+        setActiveModule(targetModule.id);
+
+        if (subModuleSlug && targetModule.subModules) {
+          const targetSubModule = targetModule.subModules.find(
+            (sub) => sub.slug === subModuleSlug
+          );
+          if (targetSubModule) {
+            setActiveSubModule(targetSubModule.id);
+          }
+        } else if (targetModule.subModules?.length > 0) {
+          setActiveSubModule(targetModule.subModules[0].id);
+        }
+      }
+    }
+  }, [moduleSlug, subModuleSlug]);
+
   const handleModuleClick = (moduleId) => {
-    setActiveModule(moduleId);
     const module = sections.find((section) => section.id === moduleId);
+    setActiveModule(moduleId);
+
     if (module?.subModules?.length > 0) {
       setActiveSubModule(module.subModules[0].id);
+      navigate(`/mastery/${module.slug}/${module.subModules[0].slug}`);
+    } else {
+      navigate(`/mastery/${module.slug}`);
     }
   };
 
   const handleSubModuleClick = (subModuleId) => {
     setActiveSubModule(subModuleId);
+    const module = sections.find((section) => section.id === activeModule);
+    const subModule = module?.subModules?.find((sub) => sub.id === subModuleId);
+    if (module?.slug && subModule?.slug) {
+      navigate(`/mastery/${module.slug}/${subModule.slug}`);
+    }
   };
 
   const getCurrentIndices = () => {
@@ -54,7 +104,9 @@ const Content = () => {
     if (currentModule?.subModules?.length > 0) {
       const newSubIndex = subModuleIndex + direction;
       if (newSubIndex >= 0 && newSubIndex < currentModule.subModules.length) {
-        setActiveSubModule(currentModule.subModules[newSubIndex].id);
+        const newSubModule = currentModule.subModules[newSubIndex];
+        setActiveSubModule(newSubModule.id);
+        navigate(`/mastery/${currentModule.slug}/${newSubModule.slug}`);
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
@@ -62,15 +114,18 @@ const Content = () => {
 
     const newModuleIndex = moduleIndex + direction;
     if (newModuleIndex >= 0 && newModuleIndex < sections.length) {
-      setActiveModule(sections[newModuleIndex].id);
-      if (sections[newModuleIndex].subModules?.length > 0) {
-        setActiveSubModule(
+      const newModule = sections[newModuleIndex];
+      setActiveModule(newModule.id);
+
+      if (newModule.subModules?.length > 0) {
+        const targetSubModule =
           direction > 0
-            ? sections[newModuleIndex].subModules[0].id
-            : sections[newModuleIndex].subModules[
-                sections[newModuleIndex].subModules.length - 1
-              ].id
-        );
+            ? newModule.subModules[0]
+            : newModule.subModules[newModule.subModules.length - 1];
+        setActiveSubModule(targetSubModule.id);
+        navigate(`/mastery/${newModule.slug}/${targetSubModule.slug}`);
+      } else {
+        navigate(`/mastery/${newModule.slug}`);
       }
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -208,6 +263,15 @@ const Content = () => {
               >
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-8 text-[#670404] border-b border-[#670404]/20 pb-4 whitespace-normal [word-spacing:normal] tracking-normal">
                   {section.title}
+                  {section.subModules && activeSubModule && (
+                    <span className="block text-xl mt-2">
+                      {
+                        section.subModules.find(
+                          (sub) => sub.id === activeSubModule
+                        )?.title
+                      }
+                    </span>
+                  )}
                 </h1>
 
                 <div className="relative">

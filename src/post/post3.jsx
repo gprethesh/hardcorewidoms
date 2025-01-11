@@ -1,6 +1,7 @@
 export const post3 = {
   id: "understanding",
   title: "Understanding the Blockchain",
+  slug: "lol2",
   content: `
 # What is uPow?
 

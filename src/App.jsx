@@ -50,7 +50,11 @@ function App() {
               >
                 <Route path="/" element={<Intro />} />
                 <Route path="/research" element={<Research />} />
-                <Route path="/mastery" element={<Content />} />
+                <Route path="/mastery" element={<Content />}>
+                  <Route path=":moduleSlug" element={<Content />}>
+                    <Route path=":subModuleSlug" element={<Content />} />
+                  </Route>
+                </Route>
                 <Route path="/affiliate" element={<Affiliate />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />

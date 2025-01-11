@@ -4,6 +4,7 @@ import { Star } from "lucide-react";
 import book1 from "../assets/bookone.jpg";
 import book2 from "../assets/bookone.jpg";
 import book3 from "../assets/bookone.jpg";
+import { Link } from "react-router-dom";
 
 const Books = () => {
   const books = [
@@ -105,13 +106,12 @@ const Books = () => {
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <Button
-                      variant="default"
-                      size="sm"
-                      className="text-xs sm:text-sm border-2 border-[#121212] bg-white hover:bg-gradient-to-r from-[#121212] to-[#670404] text-[#121212] hover:text-white transition-colors duration-300"
+                    <Link
+                      to="/mastery"
+                      className="text-xs sm:text-sm text-white hover:text-gray-200 underline underline-offset-2 transition-colors duration-300"
                     >
                       Read More →
-                    </Button>
+                    </Link>
                   </div>
                 </div>
               </div>

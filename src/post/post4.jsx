@@ -1,6 +1,7 @@
 export const post4Preview = {
   id: "post4",
   title: "Post 4",
+  slug: "lol3",
   previewContent: `
 # What is uPow?
 
