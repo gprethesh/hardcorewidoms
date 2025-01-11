@@ -1,19 +1,19 @@
 export const post1 = {
   id: "module-1",
-  slug: "understand",
-  title: "Module 1: UNDERSTAND",
+  slug: "module-1",
+  title: "Module 1 - Understand",
+  content: `HERE THE MAIN CONTENT`,
   subModules: [
     {
       id: "module-1.1",
-      slug: "what-is-upow",
-      title: "1.1 What is uPow?",
-      content: `The fundamental principle behind uPow lies in its unique validation process, where computational work is directly tied to user participation and network utility. Unlike traditional PoW systems that consume vast amounts of energy solving arbitrary mathematical puzzles, uPow channels computational resources into solving practical problems that benefit the network and its users.
-`,
+      slug: "understanding-her-creation",
+      title: "1.1 Understanding Her Creation",
+      content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
     },
     {
       id: "module-1.2",
-      slug: "key-features",
-      title: "1.2 Key Features",
+      slug: "her-mind-her-soul",
+      title: "1.2 Her Mind Her Soul",
       content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
     },
     {
@@ -24,20 +24,26 @@ export const post1 = {
     },
     {
       id: "module-1.4",
-      slug: "dam-shit",
-      title: "1.4  dam shit",
+      slug: "whispers-of-womanhood",
+      title: "1.4 Whispers of Womanhood",
       content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
     },
     {
       id: "module-1.5",
-      slug: "fuck-off",
-      title: "1.5 fuck offf",
+      slug: "learn-her-inner-desire",
+      title: "1.5 Learn Her inner Desire",
       content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
     },
     {
       id: "module-1.6",
-      slug: "dam-you",
-      title: "1.6 dam you",
+      slug: "decoding-her-juice",
+      title: "1.6 Decoding Her Juice",
+      content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
+    },
+    {
+      id: "module-1.7",
+      slug: "the-feminine-spectrum",
+      title: "1.7 The Feminine Spectrum",
       content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
     },
   ],

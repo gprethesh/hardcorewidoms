@@ -97,7 +97,7 @@ function Navbar() {
             </li>
             <li className="w-full md:w-auto">
               <Link
-                to="/mastery"
+                to="/mastery/module-1/understanding-her-creation"
                 className={`block w-full md:w-auto px-4 py-2.5 
                   ${
                     location.pathname === "/mastery"
