@@ -11,7 +11,7 @@ const Books = () => {
     {
       title: "The Stag By The Cabin",
       author: "Philip Vasquez",
-
+      url: "/mastery/understand/technical-implementation",
       rating: 5,
       description:
         "The passage experienced a surge in popularity during the 1960s when Letraset used it...",
@@ -24,7 +24,7 @@ const Books = () => {
     {
       title: "The Stag By The Cabin",
       author: "Adora Aronowitz",
-
+      url: "/mastery/lol2",
       rating: 5,
       description:
         "The passage experienced a surge in popularity during the 1960s when Letraset used it...",
@@ -37,7 +37,7 @@ const Books = () => {
     {
       title: "The World Of Abstract Art",
       author: "Emily Robbins",
-
+      url: "/mastery/lol3",
       rating: 4,
       description:
         "The passage experienced a surge in popularity during the 1960s when Letraset used it...",
@@ -107,7 +107,7 @@ const Books = () => {
 
                   <div className="flex items-center gap-4">
                     <Link
-                      to="/mastery"
+                      to={book.url}
                       className="text-xs sm:text-sm text-white hover:text-gray-200 underline underline-offset-2 transition-colors duration-300"
                     >
                       Read More →

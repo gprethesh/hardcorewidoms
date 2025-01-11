@@ -13,7 +13,7 @@ function Hero() {
           free life.
         </p>
       </div>
-      <div className="hero-img">
+      <div className="hero-img hidden md:block">
         <img src={hero} alt="lady" />
       </div>
     </div>

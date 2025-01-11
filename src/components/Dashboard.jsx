@@ -76,11 +76,9 @@ export default function Dashboard() {
                   </Button>
                 </Link>
               </div>
-              <img
-                src="/illustration.svg"
-                alt="Illustration"
-                className="h-24 lg:h-32"
-              />
+              {/* <div className="flex items-center justify-center">
+                <Lightbulb className="h-20 lg:h-28 w-20 lg:w-28 text-[#670404]/90" />
+              </div> */}
             </div>
           </CardContent>
         </Card>

@@ -23,6 +23,7 @@ import DashboardPayout from "./components/DashboardPayout";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/Forgotpw";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <HelmetProvider>
         <div>
           <Router>
+            <ScrollToTop />
             <Routes>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route
